@@ -1,43 +1,55 @@
 import API from "./dbCalls";
 
-//testing import of dbcalls and calling getAllPlaces
-API.getAllPlaces()
-    .then((places) => {
-        console.log("Oh the places you will go:", places);
-    });
+// DISPLAYING ALL INTERESTS ON THE DOM
 
-// const createSaveButton = function () {
-//     btnFrag = document.createDocumentFragment()
-//     btnEL =  document.createElement("button")
-//     btnEl.className = "save-poi-button"
-//     btn.textContent = "Let's go!"
-//     btnFrag.appendChild(btnEl)
-//     let container = document.querySelector(".save-button-container")
-//     container.appendChild(btnFrag)
-// }
+const getData = () => {
+    API.getAllInterests()
+    .then(parsedResult => parsedResult.forEach(interest => {
+        let container = document.querySelector(".interest-output-container")
+        console.log(interest)
+        let block = `
+        <h2>${interest.name}</h2>
+        <p>${interest.description}</p>
+        <p>${interest.cost}</p>`
+        container.innerHTML += block
+    }))
+}
+getData()
 
-API.getAllInterests()
-.then(parsedResult => parsedResult.forEach(interest => {
-    let container = document.querySelector(".interest-output-container")
-    console.log(interest)
-    let block = `
-    <h2>${interest.name}</h2>
-    <p>${interest.description}</p>
-    <p>${interest.cost}</p>`
-    container.innerHTML += block
-}))
+// CREATING "NEW POINT OF INTEREST" BUTTON THAT CALLS THE NEW INTEREST FORM
 
 let newInterestButton = document.querySelector(".new-poi-button")
 newInterestButton.addEventListener("click", function (event) {
     let form = document.querySelector(".new-poi-form")
     newInterestButton.classList.add("hidden")
     form.classList.remove("hidden")
-    // createSaveButton()
-    btnFrag = document.createDocumentFragment()
-    btnEL =  document.createElement("button")
-    btnEl.className = "save-poi-button"
-    btn.textContent = "Let's go!"
-    btnFrag.appendChild(btnEl)
-    let container = document.querySelector(".save-button-container")
-    container.appendChild(btnFrag)
+})
+
+// (EVENT HANDLER) SAVE NEW POINT OF INTEREST AND UPDATE DOM
+
+let saveButton = document.querySelector(".interest-save-button")
+saveButton.addEventListener("click", function () {
+    console.log("you are killing it!!!")
+    let interestName = document.querySelector("#interest-name-input").value
+    let interestDescription = document.querySelector("#interest-description-input").value
+    let interestCost =  document.querySelector("#interest-cost-input").value
+
+    let newObj = {
+        name: interestName,
+        description: interestDescription,
+        cost: interestCost
+    }
+    API.saveInterest(newObj)
+        .then(interest => {
+            API.getOneInterest(interest.id)
+            .then(parsedResult => parsedResult.forEach(interest => {
+                let container = document.querySelector(".interest-output-container")
+                console.log(interest)
+                let block = `
+                <h2>${interest.name}</h2>
+                <p>${interest.description}</p>
+                <p>${interest.cost}</p>`
+                container.innerHTML += block
+            }))
+        })
 })
