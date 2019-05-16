@@ -1,37 +1,55 @@
 {
-    "places": [
-      { 
-        "id": 1, 
-        "name": "Italy", 
-        "visa_required": false 
-      },
-      { 
-        "id": 2, 
-        "name": "Switzerland", 
-        "visa_required": true 
-      },
-      { 
-        "id": 3, 
-        "name": "France", 
-        "visa_required": false
-      }
-    ],
-    "interests": [
-        {
-            "id": 1, 
-            "placeId": 1, 
-            "name": "Local Market", 
-            "description": "Local market where you can try purchase local products and try the local food.", 
-            "cost": 0.00, 
-            "review": "" 
-        },
-        {
-            "id": 2,
-            "placeId": 3,
-            "name": "Concert Venue",
-            "description": "A place to go and listen to music, overlooking the city.",
-            "cost": 0.00,
-            "review": ""
-        }
-    ]
-  }
+  "places": [
+    {
+      "id": 1,
+      "name": "Italy",
+      "visa_required": false
+    },
+    {
+      "id": 2,
+      "name": "Switzerland",
+      "visa_required": true
+    },
+    {
+      "id": 3,
+      "name": "France",
+      "visa_required": false
+    }
+  ],
+  "interests": [
+    {
+      "id": 1,
+      "placeId": 1,
+      "name": "Local Market",
+      "description": "Local market where you can try purchase local products and try the local food.",
+      "cost": 0,
+      "review": ""
+    },
+    {
+      "id": 2,
+      "placeId": 3,
+      "name": "Concert Venue",
+      "description": "A place to go and listen to music, overlooking the city.",
+      "cost": 0,
+      "review": ""
+    },
+    {
+      "name": "nfdlksafd",
+      "description": "fdsa",
+      "cost": "fdsa",
+      "id": 3
+    },
+    {
+      "name": "beep",
+      "description": "",
+      "cost": "",
+      "id": 4
+    },
+    {
+      "name": "ds",
+      "description": "",
+      "cost": "",
+      "id": 5
+    }
+  ]
+}
