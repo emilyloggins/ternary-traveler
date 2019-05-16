@@ -1,20 +1,37 @@
 {
     "places": [
+      { 
+        "id": 1, 
+        "name": "Italy", 
+        "visa_required": false 
+      },
+      { 
+        "id": 2, 
+        "name": "Switzerland", 
+        "visa_required": true 
+      },
+      { 
+        "id": 3, 
+        "name": "France", 
+        "visa_required": false
+      }
+    ],
+    "interests": [
         {
-            "id": 1,
-            "name": "Italy",
-            "visa_required": false
+            "id": 1, 
+            "placeId": 1, 
+            "name": "Local Market", 
+            "description": "Local market where you can try purchase local products and try the local food.", 
+            "cost": 0.00, 
+            "review": "" 
         },
         {
             "id": 2,
-            "name": "Switzerland",
-            "visa_required": true
-        },
-        {
-            "id": 3,
-            "name": "France",
-            "visa_required": false
+            "placeId": 3,
+            "name": "Concert Venue",
+            "description": "A place to go and listen to music, overlooking the city.",
+            "cost": 0.00,
+            "review": ""
         }
-    ],
-    "interests": []
-}
+    ]
+  }
