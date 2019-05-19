@@ -1,10 +1,10 @@
-import API from "./dbCalls"
+// import API from "./dbCalls"
 
-document.querySelector(".interest-output-container")
+// document.querySelector(".interest-output-container")
 
-API.getAllInterests()
-.then(parsedResult => parsedResult.forEach(interest => {
-    console.log(interest)
-    // let block = ``
-}))
+// API.getAllInterests()
+// .then(parsedResult => parsedResult.forEach(interest => {
+//     console.log(interest)
+//     // let block = ``
+// }))
 

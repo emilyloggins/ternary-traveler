@@ -1,3 +1,25 @@
+body {
+    background-color: goldenrod;
+}
 .hidden {
     visibility: hidden;
+}
+nav {
+    display: flex;
+    justify-items: flex-start;
+    flex-direction: row;
+}
+#header-main {
+    color: goldenrod;
+}
+.plane-icon {
+    width: 2.5%;
+    height: auto;
+}
+.interest-icons {
+    width: 15px;
+    height: auto;
+}
+.new-poi-button {
+    margin: 1em;
 }
